@@ -13,7 +13,7 @@ You need to set some environmental variables:
 - MATLAB_ROOT : location of Matlab install location (e.g. C:/Program Files/MATLAB/R2021b) 
 
 **DecoMR:**
-If you plan on running the DecoMR network, you need to launch Matlab by running setEnv.bat in the DecoMR folder
+If you plan on running the DecoMR network, you need to launch Matlab by running setEnv.bat in the DecoMR folder. The script assumes that C:\ProgramData\Anaconda3\Scripts\activate.bat activates conda.
 You need to create a conda environment named DecoMR and install the all requirements in DecoMR\requirements.txt    
 
 **DensePose:**
