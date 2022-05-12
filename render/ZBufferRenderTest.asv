@@ -1,0 +1,31 @@
+
+
+addpath('DAE');
+addpath('URDF');
+addpath('mex/');
+
+human = Human('female');
+human = Human('yumi');
+
+scene = struct();
+scene.lights = lights;
+scene.actors = {human};
+scene.cameras = cameras;
+% scene.meshes = meshes;
+
+
+% scene.cameras{1}.xfov = 100;
+im  = zeros(256*2,256*2,3,'single');
+for x = 0:.1:2*pi*88 % pi/2;
+    tic
+
+    Trot = [eul2rotm([.1 0 0]) [0;0;0]; 0 0 0 1]';
+%     scene.cameras{1}.transform = Trot*scene.cameras{1}.transform;
+%     human.transform = Trot*human.transform;
+    human.boneRotations(:,:,1) = eul2rotm([0 .1 0])*human.boneRotations(:,:,1);
+    im = render(scene, im);
+    drawnow
+
+    toc
+
+end

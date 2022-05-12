@@ -1,0 +1,68 @@
+[
+  {
+    "directory": "D:\\correspondence\\render\\codegen\\mex\\getMeanNormals",
+    "command": "cl /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /source-charset:utf-8 /I \".\" /I \"D:\\correspondence\\render\" /I \".\\interface\" /I \"D:\\Program Files\\MATLAB\\R2021b\\extern\\include\" /I \".\" -DMODEL=getMeanNormals_mex   getMeanNormals_data.c /Fobuild\\win64\\getMeanNormals_data.obj",
+    "file": "getMeanNormals_data.c",
+    "output": "build/win64/getMeanNormals_data.obj"
+  },
+  {
+    "directory": "D:\\correspondence\\render\\codegen\\mex\\getMeanNormals",
+    "command": "cl /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /source-charset:utf-8 /I \".\" /I \"D:\\correspondence\\render\" /I \".\\interface\" /I \"D:\\Program Files\\MATLAB\\R2021b\\extern\\include\" /I \".\" -DMODEL=getMeanNormals_mex   rt_nonfinite.c /Fobuild\\win64\\rt_nonfinite.obj",
+    "file": "rt_nonfinite.c",
+    "output": "build/win64/rt_nonfinite.obj"
+  },
+  {
+    "directory": "D:\\correspondence\\render\\codegen\\mex\\getMeanNormals",
+    "command": "cl /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /source-charset:utf-8 /I \".\" /I \"D:\\correspondence\\render\" /I \".\\interface\" /I \"D:\\Program Files\\MATLAB\\R2021b\\extern\\include\" /I \".\" -DMODEL=getMeanNormals_mex   getMeanNormals_initialize.c /Fobuild\\win64\\getMeanNormals_initialize.obj",
+    "file": "getMeanNormals_initialize.c",
+    "output": "build/win64/getMeanNormals_initialize.obj"
+  },
+  {
+    "directory": "D:\\correspondence\\render\\codegen\\mex\\getMeanNormals",
+    "command": "cl /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /source-charset:utf-8 /I \".\" /I \"D:\\correspondence\\render\" /I \".\\interface\" /I \"D:\\Program Files\\MATLAB\\R2021b\\extern\\include\" /I \".\" -DMODEL=getMeanNormals_mex   getMeanNormals_terminate.c /Fobuild\\win64\\getMeanNormals_terminate.obj",
+    "file": "getMeanNormals_terminate.c",
+    "output": "build/win64/getMeanNormals_terminate.obj"
+  },
+  {
+    "directory": "D:\\correspondence\\render\\codegen\\mex\\getMeanNormals",
+    "command": "cl /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /source-charset:utf-8 /I \".\" /I \"D:\\correspondence\\render\" /I \".\\interface\" /I \"D:\\Program Files\\MATLAB\\R2021b\\extern\\include\" /I \".\" -DMODEL=getMeanNormals_mex   interface\\_coder_getMeanNormals_api.c /Fobuild\\win64\\_coder_getMeanNormals_api.obj",
+    "file": "interface/_coder_getMeanNormals_api.c",
+    "output": "build/win64/_coder_getMeanNormals_api.obj"
+  },
+  {
+    "directory": "D:\\correspondence\\render\\codegen\\mex\\getMeanNormals",
+    "command": "cl /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /source-charset:utf-8 /I \".\" /I \"D:\\correspondence\\render\" /I \".\\interface\" /I \"D:\\Program Files\\MATLAB\\R2021b\\extern\\include\" /I \".\" -DMODEL=getMeanNormals_mex   interface\\_coder_getMeanNormals_mex.c /Fobuild\\win64\\_coder_getMeanNormals_mex.obj",
+    "file": "interface/_coder_getMeanNormals_mex.c",
+    "output": "build/win64/_coder_getMeanNormals_mex.obj"
+  },
+  {
+    "directory": "D:\\correspondence\\render\\codegen\\mex\\getMeanNormals",
+    "command": "cl /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /source-charset:utf-8 /I \".\" /I \"D:\\correspondence\\render\" /I \".\\interface\" /I \"D:\\Program Files\\MATLAB\\R2021b\\extern\\include\" /I \".\" -DMODEL=getMeanNormals_mex   getMeanNormals.c /Fobuild\\win64\\getMeanNormals.obj",
+    "file": "getMeanNormals.c",
+    "output": "build/win64/getMeanNormals.obj"
+  },
+  {
+    "directory": "D:\\correspondence\\render\\codegen\\mex\\getMeanNormals",
+    "command": "cl /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /source-charset:utf-8 /I \".\" /I \"D:\\correspondence\\render\" /I \".\\interface\" /I \"D:\\Program Files\\MATLAB\\R2021b\\extern\\include\" /I \".\" -DMODEL=getMeanNormals_mex   div.c /Fobuild\\win64\\div.obj",
+    "file": "div.c",
+    "output": "build/win64/div.obj"
+  },
+  {
+    "directory": "D:\\correspondence\\render\\codegen\\mex\\getMeanNormals",
+    "command": "cl /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /source-charset:utf-8 /I \".\" /I \"D:\\correspondence\\render\" /I \".\\interface\" /I \"D:\\Program Files\\MATLAB\\R2021b\\extern\\include\" /I \".\" -DMODEL=getMeanNormals_mex   getMeanNormals_emxutil.c /Fobuild\\win64\\getMeanNormals_emxutil.obj",
+    "file": "getMeanNormals_emxutil.c",
+    "output": "build/win64/getMeanNormals_emxutil.obj"
+  },
+  {
+    "directory": "D:\\correspondence\\render\\codegen\\mex\\getMeanNormals",
+    "command": "cl /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /source-charset:utf-8 /I \".\" /I \"D:\\correspondence\\render\" /I \".\\interface\" /I \"D:\\Program Files\\MATLAB\\R2021b\\extern\\include\" /I \".\" -DMODEL=getMeanNormals_mex   interface\\_coder_getMeanNormals_info.c /Fobuild\\win64\\_coder_getMeanNormals_info.obj",
+    "file": "interface/_coder_getMeanNormals_info.c",
+    "output": "build/win64/_coder_getMeanNormals_info.obj"
+  },
+  {
+    "directory": "D:\\correspondence\\render\\codegen\\mex\\getMeanNormals",
+    "command": "cl /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /source-charset:utf-8 /I \".\" /I \"D:\\correspondence\\render\" /I \".\\interface\" /I \"D:\\Program Files\\MATLAB\\R2021b\\extern\\include\" /I \".\" -DMODEL=getMeanNormals_mex   \"D:\\Program Files\\MATLAB\\R2021b\\extern\\version\\c_mexapi_version.c\" /Fobuild\\win64\\c_mexapi_version.obj",
+    "file": "D:/Program Files/MATLAB/R2021b/extern/version/c_mexapi_version.c",
+    "output": "build/win64/c_mexapi_version.obj"
+  }
+]

@@ -1,0 +1,52 @@
+# CompilerName=msvc160
+# Mode=optim
+ninja_required_version = 1.3
+
+# Basic folders
+root = .
+builddir = $root\build\win64
+matlabdir = D:\Program Files\MATLAB\R2021b
+startdir = D:\correspondence\render
+
+# Toolchain information
+cc = cl
+cxx = cl
+linker = link
+linkerxx = link
+
+cflags =  /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /source-charset:utf-8 /I "$root" /I "$startdir" /I "$root\interface" /I "$matlabdir\extern\include" /I "." -DMODEL=getMeanNormals_mex  
+
+cxxflags =   /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /source-charset:utf-8 /I "$root" /I "$startdir" /I "$root\interface" /I "$matlabdir\extern\include" /I "." -DMODEL=getMeanNormals_mex  
+
+ldflags =  /nologo /manifest   /DLL /LIBPATH:"$matlabdir\extern\lib\win64\microsoft" libmx.lib libmex.lib libmat.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib  /out:"getMeanNormals_mex.mexw64" libemlrt.lib libcovrt.lib libut.lib libmwmathutil.lib  /export:mexFunction /export:mexfilerequiredapiversion /export:emlrtMexFcnProperties /export:getMeanNormals /export:getMeanNormals_initialize /export:getMeanNormals_terminate /export:getMeanNormals_atexit /export:emxFree_real32_T /export:emxFree_int32_T /export:emxFree_real_T /export:emxInit_real32_T /export:emxInit_int32_T /export:emxInit_real_T /export:emxEnsureCapacity_real32_T /export:emxEnsureCapacity_int32_T /export:emxEnsureCapacity_real_T
+
+# Build Rules
+rule cc
+    command = $cc $cflags $in /Fo$out
+
+rule cxx
+    command = $cxx $cxxflags $in /Fo$out
+
+rule link
+    command = $linker @$out.rsp $ldflags
+    rspfile = $out.rsp
+    rspfile_content = $in
+
+rule linkxx
+    command = $linkerxx $in $ldflags
+
+# Build
+build $builddir\getMeanNormals_data.obj : cc $root\getMeanNormals_data.c
+build $builddir\rt_nonfinite.obj : cc $root\rt_nonfinite.c
+build $builddir\getMeanNormals_initialize.obj : cc $root\getMeanNormals_initialize.c
+build $builddir\getMeanNormals_terminate.obj : cc $root\getMeanNormals_terminate.c
+build $builddir\_coder_getMeanNormals_api.obj : cc $root\interface\_coder_getMeanNormals_api.c
+build $builddir\_coder_getMeanNormals_mex.obj : cc $root\interface\_coder_getMeanNormals_mex.c
+build $builddir\getMeanNormals.obj : cc $root\getMeanNormals.c
+build $builddir\div.obj : cc $root\div.c
+build $builddir\getMeanNormals_emxutil.obj : cc $root\getMeanNormals_emxutil.c
+build $builddir\_coder_getMeanNormals_info.obj : cc $root\interface\_coder_getMeanNormals_info.c
+build $builddir\c_mexapi_version.obj : cc $matlabdir\extern\version\c_mexapi_version.c
+
+# Link
+build $root\getMeanNormals_mex.mexw64 : link $builddir\getMeanNormals_data.obj $builddir\rt_nonfinite.obj $builddir\getMeanNormals_initialize.obj $builddir\getMeanNormals_terminate.obj $builddir\_coder_getMeanNormals_api.obj $builddir\_coder_getMeanNormals_mex.obj $builddir\getMeanNormals.obj $builddir\div.obj $builddir\getMeanNormals_emxutil.obj $builddir\_coder_getMeanNormals_info.obj $builddir\c_mexapi_version.obj 

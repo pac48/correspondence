@@ -1,0 +1,53 @@
+# CompilerName=msvc160
+# Mode=optim
+ninja_required_version = 1.3
+
+# Basic folders
+root = .
+builddir = $root\build\win64
+matlabdir = D:\Program Files\MATLAB\R2021b
+startdir = D:\correspondence\render
+
+# Toolchain information
+cc = cl
+cxx = cl
+linker = link
+linkerxx = link
+
+cflags =  /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /source-charset:utf-8 /I "$root" /I "$startdir" /I "$root\interface" /I "$matlabdir\extern\include" /I "." -DMODEL=getQuadTree_mex  
+
+cxxflags =   /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /source-charset:utf-8 /I "$root" /I "$startdir" /I "$root\interface" /I "$matlabdir\extern\include" /I "." -DMODEL=getQuadTree_mex  
+
+ldflags =  /nologo /manifest   /DLL /LIBPATH:"$matlabdir\extern\lib\win64\microsoft" libmx.lib libmex.lib libmat.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib  /out:"getQuadTree_mex.mexw64" libemlrt.lib libcovrt.lib libut.lib libmwmathutil.lib  /export:mexFunction /export:mexfilerequiredapiversion /export:emlrtMexFcnProperties /export:getQuadTree /export:getQuadTree_initialize /export:getQuadTree_terminate /export:getQuadTree_atexit /export:emxFreeStruct_cell_wrap_3 /export:emxInitStruct_cell_wrap_3 /export:emxEnsureCapacity_real_T /export:emxFree_real32_T /export:emxFree_real_T /export:emxInit_real32_T /export:emxInit_real_T /export:emxEnsureCapacity_real32_T
+
+# Build Rules
+rule cc
+    command = $cc $cflags $in /Fo$out
+
+rule cxx
+    command = $cxx $cxxflags $in /Fo$out
+
+rule link
+    command = $linker @$out.rsp $ldflags
+    rspfile = $out.rsp
+    rspfile_content = $in
+
+rule linkxx
+    command = $linkerxx $in $ldflags
+
+# Build
+build $builddir\getQuadTree_data.obj : cc $root\getQuadTree_data.c
+build $builddir\rt_nonfinite.obj : cc $root\rt_nonfinite.c
+build $builddir\getQuadTree_initialize.obj : cc $root\getQuadTree_initialize.c
+build $builddir\getQuadTree_terminate.obj : cc $root\getQuadTree_terminate.c
+build $builddir\getQuadTree.obj : cc $root\getQuadTree.c
+build $builddir\cat.obj : cc $root\cat.c
+build $builddir\_coder_getQuadTree_api.obj : cc $root\interface\_coder_getQuadTree_api.c
+build $builddir\_coder_getQuadTree_mex.obj : cc $root\interface\_coder_getQuadTree_mex.c
+build $builddir\indexShapeCheck.obj : cc $root\indexShapeCheck.c
+build $builddir\getQuadTree_emxutil.obj : cc $root\getQuadTree_emxutil.c
+build $builddir\_coder_getQuadTree_info.obj : cc $root\interface\_coder_getQuadTree_info.c
+build $builddir\c_mexapi_version.obj : cc $matlabdir\extern\version\c_mexapi_version.c
+
+# Link
+build $root\getQuadTree_mex.mexw64 : link $builddir\getQuadTree_data.obj $builddir\rt_nonfinite.obj $builddir\getQuadTree_initialize.obj $builddir\getQuadTree_terminate.obj $builddir\getQuadTree.obj $builddir\cat.obj $builddir\_coder_getQuadTree_api.obj $builddir\_coder_getQuadTree_mex.obj $builddir\indexShapeCheck.obj $builddir\getQuadTree_emxutil.obj $builddir\_coder_getQuadTree_info.obj $builddir\c_mexapi_version.obj 
